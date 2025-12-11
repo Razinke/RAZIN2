@@ -1,0 +1,421 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Salim</title>
+    <meta
+      name="description"
+      content="Futuristic portfolio showcasing projects, skills, AR/AI concepts and interactive demos."
+    />
+
+    <!-- Favicons / PWA meta (optional) -->
+    <link rel="icon" href="/assets/favicon.ico" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static './assets/css/styles.css' %}" />
+
+  </head>
+  <body>
+    <!-- Canvas background for subtle particles/space vibe -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Navbar -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#banner" class="brand" aria-label="Go to home">My-profile</a>
+        
+
+        <nav class="nav" aria-label="Main navigation">
+          <button
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-list"
+          >
+            ☰
+          </button>
+          <ul id="nav-list" class="nav-list">
+            <li><a href="#banner">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#resume">Resume</a></li>
+          </ul>
+        </nav>
+
+        <div class="actions">
+          <button id="theme-toggle" aria-pressed="false" title="Toggle theme">
+            🌓
+          </button>
+          <a class="resume" href="/assets/resume.pdf" download
+            >Download Resume</a
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner / Hero -->
+    <main>
+      <section
+        id="banner"
+        class="banner"
+        style="
+          background-image: url('../futuristic-portfolio/assets/images/banner-1.jpg');
+        "
+      >
+        <div class="banner-inner container">
+          <h1 class="headline">
+            Hi — I'm
+            <span class="name glitter-text">ALFRED SALIM ODHIAMBO</span>
+          </h1>
+          <p class="subtitle">
+            I design & build forward-looking web, AI & XR experiences.
+          </p>
+
+          <div class="cta-row">
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#contact" class="btn btn-ghost">Get in touch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="about container">
+        <h2>About Me</h2>
+        <p>
+          I'm an enthusiastic and detailed IT guy with a passion for solving
+          problems through technology. My academic journey has equipped me with
+          a solid foundation in computer systems, networking, programming, and
+          database management. I enjoy building innovative solutions, whether
+          it's developing applications, designing user-friendly websites, or
+          configuring secure networks.
+        </p>
+        <h3>Experiences:</h3>
+        <ul class="experience-list">
+          <li>
+            Web Development: Creating responsive and dynamic websites using
+            HTML, CSS, JavaScript, and PHP.
+          </li>
+          <li>
+            Database Systems: Designing, implementing, and managing relational
+            databases.
+          </li>
+          <li>
+            Networking and System Administration: Understanding network
+            protocols, IP addressing, and system security practices.
+          </li>
+          <li>
+            Software Development: Problem-solving with languages like Python,
+            Java, C, and C++.
+          </li>
+          <li>
+            IT Support & Troubleshooting: Diagnosing and resolving technical
+            issues effectively.
+          </li>
+        </ul>
+        <p>
+          I am always eager to learn new technologies, adapt to emerging trends,
+          and collaborate on projects that challenge me to grow. My goal is to
+          become a versatile IT professional who not only understands the
+          technical side of computing but also applies creativity and innovation
+          to deliver impactful solutions.
+        </p>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="projects container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://picsum.photos/400/300?random=1"
+                alt="Smart Composer"
+              />
+              <div class="overlay">
+                <h3>Smart Composer</h3>
+                <p>Generative music engine (TensorFlow.js)</p>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary">View Demo</a>
+              <button
+                class="btn btn-ghost details-btn"
+                data-project="smart-composer"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://picsum.photos/400/300?random=2"
+                alt="AR Gallery"
+              />
+              <div class="overlay">
+                <h3>AR Gallery</h3>
+                <p>WebXR art gallery prototype with spatial audio</p>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary">View Demo</a>
+              <button
+                class="btn btn-ghost details-btn"
+                data-project="ar-gallery"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://picsum.photos/400/300?random=3"
+                alt="Holo UI Kit"
+              />
+              <div class="overlay">
+                <h3>Holo UI Kit</h3>
+                <p>CSS + Web Component kit for holographic card patterns</p>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary">View Code</a>
+              <button class="btn btn-ghost details-btn" data-project="holo-kit">
+                Details
+              </button>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="https://picsum.photos/400/300?random=4"
+                alt="DevOps Dashboard"
+              />
+              <div class="overlay">
+                <h3>DevOps Dashboard</h3>
+                <p>Realtime telemetry dashboard with simulated streaming</p>
+              </div>
+            </div>
+            <div class="project-actions">
+              <a href="#" class="btn btn-primary">View Demo</a>
+              <button
+                class="btn btn-ghost details-btn"
+                data-project="devops-dash"
+              >
+                Details
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="skills container">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+                alt="JavaScript"
+              />
+            </div>
+            <h3>JavaScript & Frontend Development</h3>
+            <p>
+              Proficient in modern JavaScript (ES6+), React, and Vue.js for
+              building dynamic, responsive, and user-friendly web applications.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+                alt="Machine Learning"
+              />
+            </div>
+            <h3>Machine Learning & AI</h3>
+            <p>
+              Experience with TensorFlow.js, Python, and Scikit-learn for
+              developing predictive models, natural language processing, and
+              AI-powered web applications.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+                alt="WebXR & Three.js"
+              />
+            </div>
+            <h3>WebXR & 3D Development</h3>
+            <p>
+              Skilled in creating immersive 3D experiences using WebXR,
+              Three.js, and A-Frame for virtual and augmented reality
+              applications.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+                alt="DevOps"
+              />
+            </div>
+            <h3>DevOps & Cloud Computing</h3>
+            <p>
+              Knowledge of CI/CD pipelines, Docker, Kubernetes, and cloud
+              platforms like AWS and Azure for scalable and efficient
+              deployments.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+                alt="Database Management"
+              />
+            </div>
+            <h3>Database Management</h3>
+            <p>
+              Expertise in designing and managing relational databases (MySQL,
+              PostgreSQL) and NoSQL databases (MongoDB, Firebase).
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/919/919830.png"
+                alt="Backend Development"
+              />
+            </div>
+            <h3>Backend Development</h3>
+            <p>
+              Proficient in Node.js, Express.js, and Django for building robust
+              and scalable server-side applications and APIs.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png"
+                alt="UI/UX Design"
+              />
+            </div>
+            <h3>UI/UX Design</h3>
+            <p>
+              Skilled in creating intuitive and visually appealing interfaces
+              using Figma, Adobe XD, and CSS frameworks like Tailwind and
+              Bootstrap.
+            </p>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/919/919827.png"
+                alt="Cybersecurity"
+              />
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>
+              Knowledge of network security, encryption protocols, and
+              vulnerability assessment tools to ensure secure systems and
+              applications.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact container">
+        <h2 class="section-title">Get in Touch</h2>
+        <p class="contact-description">
+          Have a project in mind or just want to say hi? Fill out the form below
+          or connect with me on social media.
+        </p>
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="input-group">
+              <span class="input-icon">👤</span>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <span class="input-icon">📧</span>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Your email"
+                required
+              />
+            </div>
+          </div>
+          <div class="input-group">
+            <span class="input-icon">💬</span>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your message"
+              required
+            ></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send Message</button>
+            <button type="button" id="clear-btn" class="btn btn-ghost">
+              Clear
+            </button>
+          </div>
+          <div id="form-feedback" role="status" aria-live="polite"></div>
+        </form>
+        <div class="social-links">
+          <a href="https://twitter.com" target="_blank" rel="noopener"
+            >🐦 Twitter</a
+          >
+          <a href="https://linkedin.com" target="_blank" rel="noopener"
+            >🔗 LinkedIn</a
+          >
+          <a href="https://github.com" target="_blank" rel="noopener"
+            >🐙 GitHub</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Project details modal (hidden) -->
+    <div
+      id="project-modal"
+      class="modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+    >
+      <div class="modal-panel">
+        <button class="modal-close" aria-label="Close">✕</button>
+        <div id="modal-content"></div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>
+          © <span id="year"></span> ALFRED SALIM ODHIAMBO. Built with a taste
+          for tomorrow.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="{% static '/assets/js/scripts.js' %}" defer></script>
+  </body>
+</html>
